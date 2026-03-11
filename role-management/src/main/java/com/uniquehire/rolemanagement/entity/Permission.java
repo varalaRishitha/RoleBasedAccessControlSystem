@@ -1,24 +1,24 @@
 package com.uniquehire.rolemanagement.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Entity
-@Table(name = "permissions")
-@Getter
-@Setter
+@Table(name="permissions")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Permission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "permission_id")
-    private Long permissionId;
+    private Long id;
 
-    @Column(name = "permission_name")
-    private String permissionName;
+    private String name;
 
     private String description;
-}
+    }
